@@ -1,8 +1,9 @@
 <?php
-// napis stranky do zoznamu -premenna-
+// napis stranky do zoznamu -premennej-$stranky
 $stranky = array(
-	'http://www.youtube.com/`,
-	'http://www.google.com/`,
+	'http://www.youtube.com`,
+	'http://www.google.com`,
+	'http://www.github.com`,
 	);
 
 // uloz si pocet stranok
