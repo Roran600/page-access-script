@@ -30,3 +30,4 @@ function ping($host, $port, $timeout)
 echo ping("$stranky", 80, 10);
 
 
+?>
