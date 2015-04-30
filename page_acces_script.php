@@ -17,17 +17,17 @@ $homepage = file_get_contents( $stranky[$nahodne_cislo] );
 echo $homepage;
 
 // ping funkcia
-function ping($host, $port, $timeout) 
-{ 
-  $tB = microtime(true); 
-  $fP = fSockOpen($host, $port, $errno, $errstr, $timeout); 
-  if (!$fP) { return "down"; } 
-  $tA = microtime(true); 
-  return round((($tA - $tB) * 1000), 0)." ms"; 
+function pingAddress($ip) {
+    $pingresult = exec("/bin/ping -n 3 $ip", $outcome, $status);
+    if (0 == $status) {
+        $status = "alive";
+    } else {
+        $status = "dead";
+    }
+    echo "The IP address, $ip, is  ".$status;
 }
 
-//Echoing it will display the ping if the host is up, if not it'll say "down".
-echo ping("$stranky", 80, 10);
-
+//http://stackoverflow.com/questions/8030789/pinging-an-ip-address-using-php-and-echoing-the-result
+pingAddress("127.0.0.1");
 
 ?>
